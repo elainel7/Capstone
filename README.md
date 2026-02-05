@@ -9,12 +9,7 @@ An interactive and engaging birthday greeting game designed for University of Wa
 
 ## Problem Statement
 
-Currently, the iSchool alumni outreach team experiences approximately 10% engagement rates for birthday messages sent to alumni (measured by click-through rates). This low engagement is part of a broader trend in higher education:
-
-- 68% of institutions have seen an increase or no change in alumni requesting to not be contacted
-- There was a 15% increase in alumni asking to be added to "do not contact" lists over a 5-year period (according to VAESE)
-
-However, strong alumni-university relations are critical for:
+Currently, the iSchool alumni outreach team experiences approximately 10% engagement rates for birthday messages sent to alumni (measured by click-through rates). This low engagement is part of a broader trend in higher education. However, strong alumni-university relations are critical for:
 - Providing mentorship opportunities for current students
 - Facilitating networking with working professionals
 - Forming industry partnerships

@@ -135,8 +135,6 @@ npm run build
 
 ### Deployment
 
-[Add specific deployment instructions once deployment platform is determined]
-
 **Environment Variables for Production:**
 - Ensure all necessary environment variables are configured in your production environment
 - Never commit sensitive credentials to the repository
@@ -192,12 +190,6 @@ Use clear, descriptive commit messages:
 - Ensure all tests pass before submitting a PR
 - Maintain or improve code coverage
 
-## Documentation
-
-### Current Documentation
-- This README file
-- [Link to design files/Figma]
-- [Link to project planning documents]
 
 ## License
 

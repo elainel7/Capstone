@@ -36,7 +36,7 @@ iSchool Alumni Engagement team seeking tools to increase alumni connections and 
 ## Technologies Used
 
 - **Design:** Figma
-- **Frontend:** JavaScript, React
+- **Frontend:** Unity
 - **Backend:** Python
 - **Development Tools:** GitHub, Visual Studio Code
 - **Version Control:** Git
@@ -51,6 +51,8 @@ Before you begin, ensure you have the following installed:
 - Git
 - A code editor (Visual Studio Code recommended)
 
+- **Unity Tutorial:** A super useful tutorial to follow for Unity development can be found here at: https://youtube.com/playlist?list=PLqlFiJjSZ2x1mrMpSQgYdRm8PyWRTg6He&si=m0n_cUZl-_zyxky- (Super Mario Bros Complete Tutorial)
+
 ---
 
 **Project Timeline:** Fall 2025 - Spring 2026  
@@ -62,7 +64,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
    ```bash
    git clone https://github.com/elainel7/Capstone.git
-   cd ischool-birthday-game
+   cd Capstone
    ```
 
 2. Create and activate a virtual environment (recommended):
@@ -90,16 +92,6 @@ uvicorn main:app --reload
 Scores are stored in `leaderboard.db` (SQLite) in the project root.
 
 ---
-
-```bash
-# Frontend tests
-cd frontend
-npm test
-
-# Backend tests
-cd backend
-python -m pytest
-```
 
 ## Building and Deployment
 

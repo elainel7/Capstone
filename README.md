@@ -15,15 +15,15 @@ Currently, the iSchool alumni outreach team experiences approximately 10% engage
 - Forming industry partnerships
 - Enabling internships, co-op opportunities, and strategic collaborations
 
-## Project Goals
+### Why This Matters
+By creating a compelling and interactive experience, we aim to strengthen alumni-university connections and foster greater community participation with the iSchool.
 
 ### Success Metrics
 - **Primary Goal:** Increase alumni birthday greeting interaction rates by 5%
 - **Minimum Success Threshold:** 2% increase in interaction rates
 - **Delivery Timeline:** Fully working, interactive game by end of Spring Quarter 2026
 
-### Why This Matters
-By creating a compelling and interactive experience, we aim to strengthen alumni-university connections and foster greater community participation with the iSchool.
+## Project Goals
 
 ## Target Audience
 
@@ -47,71 +47,49 @@ iSchool Alumni Engagement team seeking tools to increase alumni connections and 
 
 Before you begin, ensure you have the following installed:
 
-- Node.js v18+ and npm
 - Python 3.9+
 - Git
 - A code editor (Visual Studio Code recommended)
+
+---
+
+**Project Timeline:** Fall 2025 - Spring 2026  
+**Sponsor:** University of Washington iSchool Alumni Engagement Team  
+**Institution:** University of Washington Information School
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/[your-org]/ischool-birthday-game.git
+   git clone https://github.com/elainel7/Capstone.git
    cd ischool-birthday-game
    ```
 
-2. Install frontend dependencies:
+2. Create and activate a virtual environment (recommended):
    ```bash
-   cd frontend
-   npm install
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
    ```
 
-3. Install backend dependencies:
+3. Install dependencies:
    ```bash
-   cd ../backend
    pip install -r requirements.txt
    ```
 
-### Configuration
+### Running the backend
 
-1. Create environment files:
-   ```bash
-   # Frontend
-   cd frontend
-   cp .env.example .env
-   
-   # Backend
-   cd ../backend
-   cp .env.example .env
-   ```
+Start the API server:
 
-2. Configure environment variables as needed:
-   ```
-   # Example variables
-   REACT_APP_API_URL=http://localhost:5000
-   DATABASE_URL=your_database_connection
-   ```
+```bash
+uvicorn main:app --reload
+```
 
-## Usage
+- **API:** http://127.0.0.1:8000  
+- **Interactive API docs:** http://127.0.0.1:8000/docs  
 
-### Running in Development Mode
+Scores are stored in `leaderboard.db` (SQLite) in the project root.
 
-1. Start the backend server:
-   ```bash
-   cd backend
-   python app.py
-   # Or use: python -m flask run
-   ```
-
-2. In a new terminal, start the frontend:
-   ```bash
-   cd frontend
-   npm start
-   ```
-
-3. Access the application at `http://localhost:3000`
-
-### Running Tests
+---
 
 ```bash
 # Frontend tests
@@ -127,17 +105,12 @@ python -m pytest
 
 ### Building for Production
 
-```bash
-# Build frontend
-cd frontend
-npm run build
-```
+Run the API with uvicorn (no separate build step for the current backend). For production, use a process manager (e.g. Gunicorn with uvicorn workers) and configure your reverse proxy and environment variables as needed.
 
 ### Deployment
 
-**Environment Variables for Production:**
-- Ensure all necessary environment variables are configured in your production environment
-- Never commit sensitive credentials to the repository
+- Ensure environment variables are set in your production environment.
+- Do not commit sensitive credentials to the repository.
 
 ## Contributing
 
@@ -194,9 +167,3 @@ Use clear, descriptive commit messages:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Project Timeline:** Fall 2025 - Spring 2026  
-**Sponsor:** University of Washington iSchool Alumni Engagement Team  
-**Institution:** University of Washington Information School

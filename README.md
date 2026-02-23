@@ -41,6 +41,11 @@ iSchool Alumni Engagement team seeking tools to increase alumni connections and 
 - **Development Tools:** GitHub, Visual Studio Code
 - **Version Control:** Git
 
+## Project structure
+
+- **`Backend/`** — Python API (FastAPI), dependencies, and `requirements.txt`
+- **`Unity/`** — Unity game project (frontend)
+
 ## Getting Started
 
 ### Prerequisites
@@ -73,23 +78,24 @@ Before you begin, ensure you have the following installed:
    source venv/bin/activate   # On Windows: venv\Scripts\activate
    ```
 
-3. Install dependencies:
+3. Install backend dependencies (from the repo root):
    ```bash
-   pip install -r requirements.txt
+   pip install -r Backend/requirements.txt
    ```
 
 ### Running the backend
 
-Start the API server:
+From the repo root, start the API server from the `Backend` directory:
 
 ```bash
+cd Backend
 uvicorn main:app --reload
 ```
 
 - **API:** http://127.0.0.1:8000  
 - **Interactive API docs:** http://127.0.0.1:8000/docs  
 
-Scores are stored in `leaderboard.db` (SQLite) in the project root.
+Scores are stored in `leaderboard.db` (SQLite) in the `Backend` directory.
 
 ---
 
@@ -158,4 +164,4 @@ Use clear, descriptive commit messages:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.

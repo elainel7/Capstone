@@ -24,7 +24,6 @@ public static class Extensions
     // }
     // REFERENCE CODE ABOVE
 
-
     // Working implementation of Raycast
     public static bool Raycast(this Rigidbody2D rigidbody, Vector2 direction)
     {
@@ -41,6 +40,7 @@ public static class Extensions
         }
         return false;
     }
+
     // Checks if the transform is facing another transform in a given direction.
     // For example, if you want to check if the player stomps on an enemy, you
     // would pass the player transform, the enemy transform, and Vector2.down.

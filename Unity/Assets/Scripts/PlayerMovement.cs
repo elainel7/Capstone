@@ -47,21 +47,17 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update()
-{
-    HorizontalMovement();
+    {
+        HorizontalMovement();
 
-    grounded = rb.Raycast(Vector2.down);
-    
-    // Debug.Log("Grounded: " + grounded + " Position: " + rb.position);
-    // Debug.DrawRay(rb.position, Vector2.down * 2f, Color.red);
+        grounded = rb.Raycast(Vector2.down);
 
+        if (grounded) {
+            GroundedMovement();
+        }
 
-    if (grounded) {
-        GroundedMovement();
+        ApplyGravity();
     }
-
-    ApplyGravity();
-}
 
     private void FixedUpdate()
     {
@@ -79,12 +75,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void HorizontalMovement()
     {
+        // Accelerate / decelerate
         inputAxis = Input.GetAxis("Horizontal");
-        // Debug.Log("InputAxis: " + inputAxis);
-        // Debug.Log("Velocity: " + velocity.x);
-        
         velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
 
+        // Check if running into a wall
+        if (rb.Raycast(Vector2.right * velocity.x)) {
+            velocity.x = 0f;
+        }
+
+        // Flip sprite to face direction
         if (velocity.x > 0f) {
             transform.eulerAngles = Vector3.zero;
         } else if (velocity.x < 0f) {
@@ -94,11 +94,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundedMovement()
     {
+        // Prevent gravity from infinitly building up
         velocity.y = Mathf.Max(velocity.y, 0f);
         jumping = velocity.y > 0f;
 
-        // Debug.Log("Grounded: " ÷+ grounded + " Jump button: " + Input.GetButtonDown("Jump"));
-
+        // Perform jump
         if (Input.GetButtonDown("Jump"))
         {
             velocity.y = jumpForce;

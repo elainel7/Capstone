@@ -8,10 +8,20 @@ public class SideScrollingCamera : MonoBehaviour
     public float undergroundHeight = -9.5f;
     public float undergroundThreshold = 0f;
 
+    private float _startX;
+
+    private void Start()
+    {
+        _startX = transform.position.x;
+    }
+
     private void LateUpdate()
     {
+        if (trackedObject == null) return;
+
         Vector3 cameraPosition = transform.position;
-        cameraPosition.x = Mathf.Max(cameraPosition.x, trackedObject.position.x);
+        float targetX = trackedObject.position.x;
+        cameraPosition.x = Mathf.Max(_startX, targetX);
         transform.position = cameraPosition;
     }
 

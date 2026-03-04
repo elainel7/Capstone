@@ -17,6 +17,9 @@ public class FlagPole : MonoBehaviour
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out Player player))
         {
+            if (!GameManager.Instance.AllLevelCoinsCollected)
+                return;
+
             GameManager.Instance.CompleteLevel();
             if (playFlagpoleAnimation)
             {

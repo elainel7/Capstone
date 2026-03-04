@@ -42,7 +42,7 @@ public class DeathAnimation : MonoBehaviour
         }
 
         if (TryGetComponent(out Rigidbody2D rigidbody)) {
-            rigidbody.isKinematic = true;
+            rigidbody.bodyType = RigidbodyType2D.Kinematic;
         }
 
         if (TryGetComponent(out PlayerMovement playerMovement)) {

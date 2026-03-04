@@ -150,7 +150,7 @@ Use clear, descriptive commit messages:
 
 ### Code Style
 
-- Follow consistent formatting (use Prettier for JavaScript/React)
+<!-- - Follow consistent formatting (use Prettier for JavaScript/React) -->
 - Write clear comments for complex logic
 - Keep functions small and focused
 - Write meaningful variable and function names

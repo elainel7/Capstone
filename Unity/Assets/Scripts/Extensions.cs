@@ -10,7 +10,7 @@ public static class Extensions
     // into a wall, you can pass Vector2.right or Vector2.left.
     public static bool Raycast(this Rigidbody2D rigidbody, Vector2 direction)
     {
-        if (rigidbody.isKinematic) {
+        if (rigidbody.bodyType == RigidbodyType2D.Kinematic) {
             return false;
         }
 

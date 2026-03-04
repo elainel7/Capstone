@@ -59,7 +59,7 @@ public class Koopa : MonoBehaviour
     {
         pushed = true;
 
-        GetComponent<Rigidbody2D>().isKinematic = false;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
         EntityMovement movement = GetComponent<EntityMovement>();
         movement.direction = direction.normalized;

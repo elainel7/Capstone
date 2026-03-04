@@ -5,7 +5,7 @@ public class GameHUD : MonoBehaviour
 {
     [Header("Optional: assign to use existing UI")]
     [SerializeField] private Text timeText;
-    [SerializeField] private Text coinsText;
+    [SerializeField] private Text levelCoinsText;
 
     [Header("Auto-create settings (used if references above are empty)")]
     [SerializeField] private int fontSize = 24;
@@ -13,7 +13,7 @@ public class GameHUD : MonoBehaviour
 
     private void Start()
     {
-        if (timeText == null || coinsText == null)
+        if (timeText == null || levelCoinsText == null)
             CreateRuntimeUI();
     }
 
@@ -38,26 +38,25 @@ public class GameHUD : MonoBehaviour
         timeRect.offsetMin = Vector2.zero;
         timeRect.offsetMax = Vector2.zero;
 
-        var coinsObj = new GameObject("CoinsText");
-        coinsObj.transform.SetParent(canvasObj.transform, false);
-        coinsText = coinsObj.AddComponent<Text>();
-        coinsText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-        coinsText.fontSize = fontSize;
-        coinsText.color = textColor;
-        coinsText.alignment = TextAnchor.UpperLeft;
-        var coinsRect = coinsObj.GetComponent<RectTransform>();
-        coinsRect.anchorMin = new Vector2(0.02f, 0.84f);
-        coinsRect.anchorMax = new Vector2(0.3f, 0.92f);
-        coinsRect.offsetMin = Vector2.zero;
-        coinsRect.offsetMax = Vector2.zero;
-
+        var levelCoinsObj = new GameObject("LevelCoinsText");
+        levelCoinsObj.transform.SetParent(canvasObj.transform, false);
+        levelCoinsText = levelCoinsObj.AddComponent<Text>();
+        levelCoinsText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        levelCoinsText.fontSize = fontSize;
+        levelCoinsText.color = textColor;
+        levelCoinsText.alignment = TextAnchor.UpperLeft;
+        var levelCoinsRect = levelCoinsObj.GetComponent<RectTransform>();
+        levelCoinsRect.anchorMin = new Vector2(0.02f, 0.84f);
+        levelCoinsRect.anchorMax = new Vector2(0.3f, 0.92f);
+        levelCoinsRect.offsetMin = Vector2.zero;
+        levelCoinsRect.offsetMax = Vector2.zero;
     }
 
     private void Update()
     {
         if (GameManager.Instance == null) return;
         if (timeText != null) timeText.text = FormatTime(GameManager.Instance.ElapsedTime);
-        if (coinsText != null) coinsText.text = $"x {GameManager.Instance.coins:D2}";
+        if (levelCoinsText != null) levelCoinsText.text = $"Coins: {GameManager.Instance.levelCoinsCollected}/{GameManager.Instance.levelCoinsTotal}";
     }
 
     private static string FormatTime(float seconds)

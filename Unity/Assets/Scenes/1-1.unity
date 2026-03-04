@@ -1066,6 +1066,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2938452933781992828, guid: 0321727fc4f2a09458753c8f9f0ac24d, type: 3}
+      propertyPath: nextStage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938452933781992828, guid: 0321727fc4f2a09458753c8f9f0ac24d, type: 3}
+      propertyPath: nextWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938452933781992828, guid: 0321727fc4f2a09458753c8f9f0ac24d, type: 3}
+      propertyPath: poleBottom
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938452933781992828, guid: 0321727fc4f2a09458753c8f9f0ac24d, type: 3}
       propertyPath: playFlagpoleAnimation
       value: 0
       objectReference: {fileID: 0}
@@ -2091,7 +2103,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.2}
+  m_Offset: {x: 0.058650255, y: 0.11160919}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2101,7 +2113,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.8232184}
   m_EdgeRadius: 0
 --- !u!4 &1539768695 stripped
 Transform:
@@ -2656,7 +2668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8256748364385963372, guid: 9b8c0bbaf8d1b40ada39e73e42d2f2e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.797449
+      value: 1.815
       objectReference: {fileID: 0}
     - target: {fileID: 8256748364385963372, guid: 9b8c0bbaf8d1b40ada39e73e42d2f2e9, type: 3}
       propertyPath: m_LocalPosition.z

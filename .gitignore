@@ -6,6 +6,10 @@ Obj/
 Build/
 Builds/
 
+.plastic/
+ignore.conf
+.vsconfig
+
 .vs/
 .vscode/
 *.csproj

@@ -1,10 +1,12 @@
 # Unity
-Libary/
+Library/
 Temp/
 Logs/
 Obj/
 Build/
 Builds/
+Unity/
+UserSettings/
 
 .plastic/
 ignore.conf

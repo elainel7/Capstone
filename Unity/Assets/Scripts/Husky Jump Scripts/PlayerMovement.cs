@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private float inputAxis;
 
     public float moveSpeed = 8f;
+    [Tooltip("How quickly horizontal speed builds up and bleeds off. Higher = less sliding, more responsive.")]
+    public float groundAcceleration = 20f;
     public float maxJumpHeight = 5f;
     public float maxJumpTime = 1f;
     public float jumpForce => (2f * maxJumpHeight) / (maxJumpTime / 2f);
@@ -77,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Accelerate / decelerate
         inputAxis = Input.GetAxis("Horizontal");
-        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
+        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, groundAcceleration * Time.deltaTime);
 
         // Check if running into a wall
         if (rb.Raycast(Vector2.right * velocity.x)) {

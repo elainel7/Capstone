@@ -73,7 +73,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        NewGame();
+        // NewGame();
+        // changed here to load the current level, does not count 3 lives.
+        LoadLevel(world, stage);
     }
 
     public void LoadLevel(int world, int stage)
